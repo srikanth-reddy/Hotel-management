@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="jquery.js"></script>
+<style>
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  height:1000px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar {
+
+  background-color: #f1f1f1;
+  padding: 70px 10px;
+  transition: 0.2s;
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  top: 0;
+  
+}
+#play:hover
+{
+  transform: scale(1.04);
+}
+#apple:hover
+{
+  transform: scale(1.04);
+}
+#navbar a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 20px;
+  border-radius: 4px;
+
+}
+#bookingcontainer
+{
+  margin-right: 10%;margin-left: 10%; margin-top: 250px; height: 300px; background-color: #ddd; border-radius: 20px
+}
+#roomcontainer
+{
+  width:100%; border-radius: 20px; height:100%;
+}
+#navbar #logo {
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+#bookingcontainer:hover
+{
+margin-right: 0px;
+transform:scale(1.008);
+}
+#navbar a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+#navbar-right {
+  float: right;
+}
+
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 80px 10px !important;
+  }
+  #navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  #navbar-right {
+    float: none;
+  }
+}
+</style>
+</head>
+<body >
+
+<div id="navbar">
+  <a href="#default" id="logo">Explorer</a>
+  <div id="navbar-right">
+    <a href="home.html">Home</a>
+    <a href="contactus.html">contact us</a>
+    <a href="login.html">Login</a>
+  </div>
+  
+</div>
+<div class="filterdiv" style="width:10%; height:100%;border-radius: 20px;position: fixed; ">
+  <button class="filterbutton" style="width: 100%;height: 40px; border-radius: 10px;" value="Filter">
+     price filter
+  </button>
+<div class="filters" id="pricesort" onclick="location.href='menudupdup.html';" style="width:100%; text-align:center; cursor: pointer; padding-top:10px;height:40px;border-radius: 10px;position: relative; background-color: red;">
+  low to high
+</div>
+<div class="filters" style="width:100%; height:40px;border-radius: 10px;text-align:center;cursor: pointer;  padding-top:10px;position: relative; background-color: green;">
+  High to low
+</div>
+
+</div>
+<div id="bookingcontainer" ng-app="my" ng-controller="cntrl" ng-repeat="x in price" style="margin-right: 10%;margin-left: 10%; margin-top: 250px; background-color: #ddd; border-radius: 20px">
+   <div id="roomcontainer"  >
+    <div id="mainpic" style="width:60%;height:100%; border-radius: 20px; float:left; background-image: url(image/3.jpg); background-repeat: no-repeat;background-size:cover;">
+   </div>
+   <div class ="bookingsection" style="float:left; width:40%; height:100%">
+    <div style="width:100%; height:30px; " class="bookinghead"> <h2 align="center" style="border-bottom: 1px solid black;"> Book your stay </h2></div>
+    <div style="hotelinfo" style="padding-left: 20px width:100%;height: 100%;">
+       <div class="hotelname" style="width:100%; height: 40px; font-size:200%; padding:5px 20px">
+        Hotel sitara-Grand
+       </div>
+       <div class="area" style=" width:100%; height: 40px; padding:10px 20px; font-size: 130%">
+        chowrasta , Hanamkonda
+       </div>
+       <div class="reviewholder" style="width:100%;height:40px;" >
+       <div class="reviewcount" style="width: 60%; height: 40px; padding-left: 20px; position: relative;">
+         <p style="position: absolute; font-size: 25px; top:-10px;">User rating : 4.3/5 </p>
+   </div>
+ </div>
+          <div class="citycentre" style=" width:50%;position: relative; height: 40px; padding-left:20px;" value="2.3 km from city center ">
+         <p style="position: absolute;">2.3km from city center </p>
+       </div>
+       <div class="percentageoff" style="width:20%; position: relative; margin: 5px 20px 0px 70%; height:40px">
+         <p style="position: absolute; padding-left: 10px;  font-size: 20px; color:red;">20% off
+         </p>
+       </div>
+       <div class="pricehoder" style=" height:40px;">
+                <div class="newprice" style="width:20%;float: right; height: 100%; position: relative; border-bottom-right-radius: 10px; background-color: black">
+           <p style="position: absolute; color: white; padding-left: 15px;  color: white;">Rs 4000</p>                 
+       </div>
+        <div class="oldprice" style="width:20%;float: right; background-color: #abc;  position: relative; height:100%;">
+          <p style="position: absolute; padding-left: 15px;">Rs <del>5000</del></p>
+       </div>
+ </div>
+</div>
+</div>
+</div>
+</div>
+<!>.....................................................................................................................</!>
+<div id="bookingcontainer" ng-app="my" ng-controller="cntrl" ng-repeat="x in price" style="margin-right: 10%;margin-left: 10%; margin-top: 30px; background-color: #ddd; border-radius: 20px">
+   <div id="roomcontainer"  >
+    <div id="mainpic" style="width:60%;height:100%; border-radius: 20px; float:left; background-image: url(image/1.jpg); background-repeat: no-repeat;background-size:cover;">
+   </div>
+   <div class ="bookingsection" style="float:left; width:40%; height:100%">
+    <div style="width:100%; height:30px; " class="bookinghead"> <h2 align="center" style="border-bottom: 1px solid black;"> Book your stay </h2></div>
+    <div style="hotelinfo" style="padding-left: 20px width:100%;height: 100%;">
+       <div class="hotelname" style="width:100%; height: 40px; font-size:200%; padding:5px 20px">
+        Taj banjara
+       </div>
+       <div class="area" style=" width:100%; height: 40px; padding:10px 20px; font-size: 130%">
+        kukatpally , Hyderabad
+       </div>
+       <div class="reviewholder" style="width:100%;height:40px;" >
+       <div class="reviewcount" style="width: 60%; height: 40px; padding-left: 20px; position: relative;">
+         <p style="position: absolute; font-size: 25px; top:-10px;">User rating : 4.1/5 </p>
+   </div>
+ </div>
+          <div class="citycentre" style=" width:50%;position: relative; height: 40px; padding-left:20px;" value="2.3 km from city center ">
+         <p style="position: absolute;">1.3km from city center </p>
+       </div>
+       <div class="percentageoff" style="width:20%; position: relative; margin: 5px 20px 0px 70%; height:40px">
+         <p style="position: absolute; padding-left: 10px;  font-size: 20px; color:red;">30% off
+         </p>
+       </div>
+       <div class="pricehoder" style=" height:40px;">
+                <div class="newprice" style="width:20%;float: right; height: 100%; position: relative; border-bottom-right-radius: 10px; background-color: black">
+           <p style="position: absolute; color: white; padding-left: 15px;  color: white;">Rs 5600</p>                 
+       </div>
+        <div class="oldprice" style="width:20%;float: right; background-color: #abc;  position: relative; height:100%;">
+          <p style="position: absolute; padding-left: 15px;">Rs <del>8000</del></p>
+       </div>
+ </div>
+</div>
+</div>
+</div>
+</div>
+<!>.....................................................................................................................</!>
+<div id="bookingcontainer" ng-app="my" ng-controller="cntrl" ng-repeat="x in price" style="margin-right: 10%;margin-left: 10%; margin-top: 30px; background-color: #ddd; border-radius: 20px">
+   <div id="roomcontainer"  >
+    <div id="mainpic" style="width:60%;height:100%; border-radius: 20px; float:left; background-image: url(image/2.jpg); background-repeat: no-repeat;background-size:cover;">
+   </div>
+   <div class ="bookingsection" style="float:left; width:40%; height:100%">
+    <div style="width:100%; height:30px; " class="bookinghead"> <h2 align="center" style="border-bottom: 1px solid black;"> Book your stay </h2></div>
+    <div style="hotelinfo" style="padding-left: 20px width:100%;height: 100%;">
+       <div class="hotelname" style="width:100%; height: 40px; font-size:200%; padding:5px 20px">
+        Novotel
+       </div>
+       <div class="area" style=" width:100%; height: 40px; padding:10px 20px; font-size: 130%">
+        jalandhar, punjab
+       </div>
+       <div class="reviewholder" style="width:100%;height:40px;" >
+       <div class="reviewcount" style="width: 60%; height: 40px; padding-left: 20px; position: relative;">
+         <p style="position: absolute; font-size: 25px; top:-10px;">User rating : 3.9/5 </p>
+   </div>
+ </div>
+          <div class="citycentre" style=" width:50%;position: relative; height: 40px; padding-left:20px;" value="2.3 km from city center ">
+         <p style="position: absolute;">2.0km from city center </p>
+       </div>
+       <div class="percentageoff" style="width:20%; position: relative; margin: 5px 20px 0px 70%; height:40px">
+         <p style="position: absolute; padding-left: 10px;  font-size: 20px; color:red;">5% off
+         </p>
+       </div>
+       <div class="pricehoder" style=" height:40px;">
+                <div class="newprice" style="width:20%;float: right; height: 100%; position: relative; border-bottom-right-radius: 10px; background-color: black">
+           <p style="position: absolute; color: white; padding-left: 15px;  color: white;">Rs 4750</p>                 
+       </div>
+        <div class="oldprice" style="width:20%;float: right; background-color: #abc;  position: relative; height:100%;">
+          <p style="position: absolute; padding-left: 15px;">Rs <del>5000</del></p>
+       </div>
+ </div>
+</div>
+</div>
+</div>
+</div>
+<!>.....................................................................................................................</!>
+<div id="bookingcontainer" ng-app="my" ng-controller="cntrl" ng-repeat="x in price" style="margin-right: 10%;margin-left: 10%; margin-top: 30px; background-color: #ddd; border-radius: 20px">
+   <div id="roomcontainer"  >
+    <div id="mainpic" style="width:60%;height:100%; border-radius: 20px; float:left; background-image: url(image/4.jpg); background-repeat: no-repeat;background-size:cover;">
+   </div>
+   <div class ="bookingsection" style="float:left; width:40%; height:100%">
+    <div style="width:100%; height:30px; " class="bookinghead"> <h2 align="center" style="border-bottom: 1px solid black;"> Book your stay </h2></div>
+    <div style="hotelinfo" style="padding-left: 20px width:100%;height: 100%;">
+       <div class="hotelname" style="width:100%; height: 40px; font-size:200%; padding:5px 20px">
+        Rajadiwas
+       </div>
+       <div class="area" style=" width:100%; height: 40px; padding:10px 20px; font-size: 130%">
+          Delhi.
+       </div>
+       <div class="reviewholder" style="width:100%;height:40px;" >
+       <div class="reviewcount" style="width: 60%; height: 40px; padding-left: 20px; position: relative;">
+         <p style="position: absolute; font-size: 25px; top:-10px;">User rating : 3.3/5 </p>
+   </div>
+ </div>
+          <div class="citycentre" style=" width:50%;position: relative; height: 40px; padding-left:20px;" value="2.3 km from city center ">
+         <p style="position: absolute;">1.0 km from city center </p>
+       </div>
+       <div class="percentageoff" style="width:20%; position: relative; margin: 5px 20px 0px 70%; height:40px">
+         <p style="position: absolute; padding-left: 10px;  font-size: 20px; color:red;">50% off
+         </p>
+       </div>
+       <div class="pricehoder" style=" height:40px;">
+                <div class="newprice" style="width:20%;float: right; height: 100%; position: relative; border-bottom-right-radius: 10px; background-color: black">
+           <p style="position: absolute; color: white; padding-left: 15px;  color: white;">Rs 3000</p>                 
+       </div>
+        <div class="oldprice" style="width:20%;float: right; background-color: #abc;  position: relative; height:100%;">
+          <p style="position: absolute; padding-left: 15px;">Rs <del>6000</del></p>
+       </div>
+ </div>
+</div>
+</div>
+</div>
+</div>
+<!>.....................................................................................................................</!>
+<div id="bookingcontainer" ng-app="my" ng-controller="cntrl" ng-repeat="x in price" style="margin-right: 10%;margin-left: 10%; margin-top: 30px; background-color: #ddd; border-radius: 20px">
+   <div id="roomcontainer"  >
+    <div id="mainpic" style="width:60%;height:100%; border-radius: 20px; float:left; background-image: url(image/5.jpg); background-repeat: no-repeat;background-size:cover;">
+   </div>
+   <div class ="bookingsection" style="float:left; width:40%; height:100%">
+    <div style="width:100%; height:30px; " class="bookinghead"> <h2 align="center" style="border-bottom: 1px solid black;"> Book your stay </h2></div>
+    <div style="hotelinfo" style="padding-left: 20px width:100%;height: 100%;">
+       <div class="hotelname" style="width:100%; height: 40px; font-size:200%; padding:5px 20px">
+        Relax mantra
+       </div>
+       <div class="area" style=" width:100%; height: 40px; padding:10px 20px; font-size: 130%">
+        ahmedabad ,Gujarat
+       </div>
+       <div class="reviewholder" style="width:100%;height:40px;" >
+       <div class="reviewcount" style="width: 60%; height: 40px; padding-left: 20px; position: relative;">
+         <p style="position: absolute; font-size: 25px; top:-10px;">User rating : 4.7/5 </p>
+   </div>
+ </div>
+          <div class="citycentre" style=" width:50%;position: relative; height: 40px; padding-left:20px;" value="2.3 km from city center ">
+         <p style="position: absolute;">4.3km from city center </p>
+       </div>
+       <div class="percentageoff" style="width:20%; position: relative; margin: 5px 20px 0px 70%; height:40px">
+         <p style="position: absolute; padding-left: 10px;  font-size: 20px; color:red;">30% off
+         </p>
+       </div>
+       <div class="pricehoder" style=" height:40px;">
+                <div class="newprice" style="width:20%;float: right; height: 100%; position: relative; border-bottom-right-radius: 10px; background-color: black">
+           <p style="position: absolute; color: white; padding-left: 15px;  color: white;">Rs 2100</p>                 
+       </div>
+        <div class="oldprice" style="width:20%;float: right; background-color: #abc;  position: relative; height:100%;">
+          <p style="position: absolute; padding-left: 15px;">Rs <del>3000</del></p>
+       </div>
+ </div>
+</div>
+</div>
+</div>
+</div>
+<!>.....................................................................................................................</!>
+  <div id="footer" style="height:400px; margin-top: 20px; ">
+  <div id="contactshare" style="width:100%; background-color: black; border-top:2px solid black;  margin-top:20px;">
+    <div class="app" style="width:33%; float:left; height: 200px; padding:20px 20px; ">
+        <p style="font-size: 18px; text-align: center;">Download the App
+</p>         <div style="height:120px; ">
+  <div class="playstore" style="width: 100%; height: 50%;  opacity:1;
+">
+<img src="playstore.png" id="play" style="width: 100%; height: 100%;">
+</div>
+<div class="applestore" style="width: 80%; height: 30%;  opacity:1;
+">
+<img src="applestore.png" id="apple" style="width: 105%;height: 100%; margin-left: 30px;">
+</div>
+         </div >
+    </div>
+    <div id="contact" style="width:33%;float: left; height: 200px; margin-left: 0.5%; padding:20px 20px; ">
+         <p style="font-size: 18px; text-align: center;">contact Us</p>
+
+         <div style="height:120px;">
+           <h5 style="text-align: center; text-decoration-color:red; text-decoration:underline;"> Address </h5>
+           <p align="center"> Lovely professional University <br>phagwara <br> punjab <br> 14401</p>
+         </div >
+    </div>
+    <div id="about" style="width:33%; float:right; height: 200px; ;padding:20px 20px; ">
+         <p style="font-size: 18px; text-align: center;">About Us</p>
+         <div style="height:120px; ">
+          <p style="padding:0px 50px; float:left;"><a href="#">privacy policy</a></p> 
+          <p style="padding:0px 50px; float:right"><a href="#">privacy </a></p> 
+          <p style="padding:0px 50px; float:left; text-decoration: none;"><a href="#">support</a></p> 
+          <p style="padding:0px 50px; float:right"><a href="#">feedback </a></p> 
+         </div >
+  </div>
+  </div>
+  <div id="scrolltop" style="position: fixed; bottom:50px; right :50px; width:3%; height: 5%; background-color: red;"> </div>
+  </div>
+<script>
+  $(".filters").hide();
+  $(document).ready(function(){
+     $(".filterbutton").click(function(){
+      $('.filters').toggle(500);
+    });
+  });
+// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("navbar").style.padding = "30px 10px";
+    document.getElementById("logo").style.fontSize = "25px";
+  } else {
+    document.getElementById("navbar").style.padding = "70px 10px";
+    document.getElementById("logo").style.fontSize = "35px";
+  }
+}
+$(function() { $("#scrolltop").on('click', function() { $("HTML, BODY").animate({ scrollTop: 0 }, 500); }); });
+</script>
+<script src="angularjs.js">
+  var app=angular.module("my",[]);
+appangular.module("my",[]).controller("cntrl",function($scope){
+       $scope.price=[
+        "4099",
+        "5689",
+        "3399",
+        "4466",
+        "5326",
+        "2222",
+        "8899",
+        "9000",
+        "9999",
+        "5698"
+        ];
+      });
+       
+</body>
+</html>

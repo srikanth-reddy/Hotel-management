@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="bootstap.min.js"></script>
+<script src="jquery.js"></script>
+<style src="bootstap.min.css"></style>
+
+<style>
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  height:2000px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar {
+
+  background-color: #f1f1f1;
+  padding: 70px 10px;
+  transition: 0.2s;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+  
+}
+
+#navbar a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 20px;
+  border-radius: 4px;
+
+}
+
+#navbar #logo {
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+#play:hover
+{
+  opacity: 1;
+  transform: scale(1.04);
+}
+#apple:hover
+{
+  opacity: 1;
+  transform: scale(1.04);
+}
+#navbar a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+#navbar-right {
+  float: right;
+}
+#matter
+{
+  position: relative;
+        top:200px;
+}
+#offers{
+  z-index:1;
+}
+#searchbar{
+    width :50%;
+    position: absolute;
+    bottom:25px;
+    height: 40px;
+    border-radius: 10px;
+    border:2px solid black;
+    transition: 0.4s;
+  margin-left:300px;
+}
+#search
+{ border-radius: 10px;
+  float:left;
+  width:50%;
+  height: 100%;
+ 
+}
+#checkindiv
+{
+text-align: center;
+float: left;
+width:20%;
+height: 100%;
+}
+#checkoutdiv
+{
+  text-align: center;
+float:left;
+width:20%;
+height:100%;
+
+}
+.searchelements{
+  float:left;
+  width: 100%;
+}
+#searchbar input{
+  width:90%;
+  line-height: 30px;
+}
+
+      #container
+      { 
+        width:100%;
+        height:500px;
+        position: relative;
+        }
+    #container #backgroundimage{
+        width:100%;
+        height:100%;
+        opacity: 1;
+    }
+
+    .left:hover 
+    {
+      background-color: black;
+      opacity:0.6;
+      transition: 0.4s;
+    }
+    .right:hover 
+    {
+      background-color: black;
+      opacity:0.5;
+      transition: 0.4s;
+    }
+.left, .right {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  transition: 0.5s;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+}
+.services:hover
+{
+  color: red;
+  transform: scale(1.02);}
+.left
+{
+  border-radius: 0 20px 20px 0;
+}
+.right
+{
+  right:0;
+    border-radius: 20px 0 0 20px;
+}
+ #submitbutton{
+  float: left;
+  width:10%;
+  height: 100%;
+  border-radius:5px;
+}
+#submitbutton a
+{
+  width: 100%;
+  height: 100%;
+  padding:8px 2px;
+}
+.recpics2 img:hover .overlay
+{ 
+  opacity:0.5;
+}
+#offerphotos
+{
+  height:300px;
+}
+
+#offers .offerdetails
+{
+
+  float:left;
+  width:30%;
+  height:100%;
+  margin-left: 40px;
+}
+
+.offerdetails:hover
+{
+transform: scale(1.02);
+}
+.ss1:hover
+{
+  transform:scale(1.2);
+}
+
+.overlay:hover
+{
+  background-color: black; 
+  opacity:0.8;
+  transition: 0.5s;
+}
+  #overlay2:hover p{
+    display: ruby-text;
+  }
+ul#services li
+{
+  display: inline;
+
+}
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 80px 10px !important;
+  }
+  #navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  #searchbar{
+    position: absolute;
+    bottom:80px;
+  }
+  #navbar-right {
+    float: none;
+  }
+}
+</style>
+</head>
+<body>
+<div class="body">
+<div id="navbar">
+  <a href="#default" id="logo">Explorer</a>
+  <div id="navbar-right">
+    <a href="contactus.html">Contact US</a>
+    <a href="products.html">near me</a>
+    <a href="login.html">Login</a>
+  </div>
+  <div id="searchbar">
+    <div id="search">
+      <input type="text" name="" class="searchelements" style="width:100%;" placeholder="Location">
+    </div>
+  <div id="checkindiv">
+  <input placeholder="checkin" class="searchelements" style="width:100%" type="text" onfocus ="(this.type='date')" onblur="(this.type='text')" id="checkin">
+  </div>
+  <div id="checkoutdiv">
+  <input placeholder="checkout" class="searchelements" type="text" style="width:100%"  onfocus="(this.type='date')" onblur="(this.type='text')" id="checkout">
+
+</div>
+<div id="submitbutton">
+<a href="products.html">
+  search
+</a>
+</div>
+</div>
+</div>
+
+<div id="matter">
+<div id="container" >
+  <img src="image/image1.jpeg" id="backgroundimage">
+  <div class="left" onclick="previmage()">
+    <
+  </div>
+  <div class="right" onclick="nextimage()">
+    >
+  </div>
+  </div>
+  <div id="offers" style="padding-top: 40px">
+    <div id="offerheadline" style="padding:20px 20px 20px 25px; line-height:30px; font-size: 26px;">
+      <caption>Deals for you:</caption>
+    </div>
+    <div id="offerphotos">
+      <div class="offerdetails" style="position: relative; background-image: url(image/deal1.jpeg); background-repeat: no-repeat;background-size: cover;">
+        <div class="offeroverlay" style="position: absolute; height: 20%;text-align: center;border-bottom-right-radius: 10px; width: 30%; background-color: red; ">
+          <h2>35% 0ff</h2>
+        </div>
+      </div>
+      <div class="offerdetails" style="position: relative; background-image: url(image/deal2.jpeg); background-repeat: no-repeat;background-size: cover;">
+        <div class="offeroverlay" style="position: absolute;text-align: center; height: 20%;border-bottom-right-radius: 10px; width: 30%; background-color: red; ">
+          <h2>45% 0ff</h2>
+        </div>
+      </div>
+      <div class="offerdetails" style="position: relative; background-image: url(image/deal3.jpeg); background-repeat: no-repeat;background-size: cover;">
+        <div class="offeroverlay" style="position: absolute;text-align: center; height: 20%; border-bottom-right-radius: 10px; width: 30%; background-color: red; ">
+          <h2>55% 0ff</h2>
+        </div>
+      </div>
+    </div>
+      <div id="recdest" style="height:800px; margin-top: 50px; align:center; padding-bottom:30px;border-bottom:90%; border-bottom: 1px solid black">
+     <div id="recdestin" style="height:100%; position: relative; border-radius: 10px; margin-right:10%; margin-left: 10%;">
+    <div id="recdestheading" style="padding:20px 20px 20px 25px; line-height:30px; font-size: 26px;">
+      Recommended Destinations
+    </div>
+    <div class="recpics1"  style=" width:65%; float:left; height: 45%;position: relative; background-image: url(image/paris.jpeg); background-repeat: no-repeat; background-position: center; background-size:cover; border-radius: 10px;">
+      <div class="overlay" style="position: absolute; width:100%; height: 100%">
+                     <div class="overlay1" style="width:100%;height: 100%; position: absolute;">
+                     <h2  class="rech1" style="text-align: center;color:white; opacity: 0.8; font-size: 40px; margin-top: 150px;">Paris</h2>
+                     <p  class="recpicsdata1" style=" text-align: center;font-size: 20px; color:white;"> plan a <br> romantic <br> Honeymoon Trip</p>
+             </div>
+      </div>
+      
+  </div>
+      <div class="recpics2" style=" width:33%; float:right;  height: 21%;position: relative; background-image: url(image/london.jpeg); background-repeat: no-repeat; background-position: center; background-size:cover; border-radius: 10px; "> 
+            <div class="overlay" style="width:100%; height: 100%; position: absolute;">
+               <div class="overlay2" style="width:100%;height: 100%;  position: absolute;">
+                     <h2  class="rech2" style="text-align: center;color:white; opacity: 1; font-size: 20px; margin-top: 50px;">London</h2>
+                     <p  class="recpicsdata2" style=" text-align: center;font-size: 14px; color:white;"> Come<br>Explore<br>Streets of london</p>
+             </div>
+      </div>
+  </div>
+        <div class="recpics2" style=" width:33%; float: right; margin-top:24px; position: relative;  height: 21%; background-image: url(image/thailand.jpeg); background-repeat: no-repeat; background-position: center; background-size:cover; border-radius: 10px; "> 
+            <div class="overlay" style="width:100%; position: absolute; height: 100%">
+               <div class="overlay3" style="width:100%;height: 100%;  position: absolute;">
+                     <h2  class="rech3" style="text-align: center;color:white; opacity: 1; font-size: 20px; margin-top: 50px;">Thailand</h2>
+                     <p  class="recpicsdata3" style=" text-align: center;font-size: 14px; color:white;"> plan a<br> peace and relaxing <br>trip</p>
+             </div>
+      </div>
+  </div>
+        <div class="recpics2" style=" width:33%; float:left;  margin-top: 10px; position: relative; height: 21%;background-image: url(image/dubai.jpg); background-repeat: no-repeat; background-position: center; background-size:cover; border-radius: 10px; "> 
+            <div class="overlay" style="width:100%; position: absolute; height: 100%">
+              <div class="overlay4" style="width:100%;height: 100%;  position: absolute;">
+                     <h2  class="rech4" style="text-align: center;color:white; opacity: 1; font-size: 20px; margin-top: 50px;">Dubai</h2>
+                     <p  class="recpicsdata4" style=" text-align: center;font-size: 14px; color:white;"> Experiance<br>The taste of<br>luxury</p>
+             </div>
+      </div>
+  </div>
+      <div class="recpics1" style=" width:65%; float:right;margin-top: 10px;position: relative; height: 45%;background-image: url(image/sydney.jpeg); background-repeat: no-repeat; background-position: center; background-size:cover; border-radius: 10px; "> 
+            <div class="overlay" style="width:100%; position: absolute; height: 100%">
+             <div class="overlay5" style="width:100%;height: 100%; position: absolute;">
+                     <h2  class="rech5" style="text-align: center;color:white; opacity: 0.8; font-size: 40px; margin-top: 150px;">Australia</h2>
+                     <p  class="recpicsdata5" style=" text-align: center;font-size: 20px; color:white;">start for an<br>Adventures<br>trip to Australia</p>
+             </div>
+                 
+      </div>
+  </div>
+<div class="recpics2" style=" width:33%; float: left; margin-top:25px; margin-bottom: 0px; position: relative; height: 21%;background-image: url(image/amazon.jpg); background-repeat: no-repeat; background-position: center; background-size:cover; border-radius: 10px; "> 
+      <div class="overlay" style="width:100%;position: absolute; height: 100%;">
+                      <div class="overlay6" style="width:100%;height: 100%;  position: absolute;">
+                     <h2  class="rech6" style="text-align: center;color:white; opacity: 1; font-size: 20px; margin-top: 50px;">PARIS</h2>
+                     <p  class="recpicsdata6" style=" text-align: center;font-size: 14px; color:white;"> A Romantic<br>Honeymoon<br>Trip</p>
+             </div>
+      </div>
+  </div>
+</div>
+
+</div>
+<div id="promotion" style="margin-left:10%; position: relative; text-align: center; margin-right: 10%; height:650px;">
+  <div id="trending" style="text-align:center;padding-bottom: 30px; font-size: 24px; padding-top: 30px; font-size: 30px;">
+        Trending Hotels
+</div>
+<div id="trend1" style="background-image: url(image/trending1.jpeg); background-repeat:no-repeat; background-size:cover; width:49%; float:left; padding-left:30px; height:40%; border">
+</div>
+<div id="trend1" style="background-image: url(image/trending2.jpeg); background-repeat:no-repeat; background-size:cover; width:49%; float:right;  height:40%; border-right: 2px;">
+</div>
+<div id="trend1" style="background-image: url(image/trending3.jpeg); background-repeat:no-repeat; background-size:cover; width:49%; float:left; margin-top: 20px; padding-right:5px; height:40%;">
+</div>
+<div id="trend1" style="background-image: url(image/trending4.jpeg); background-repeat:no-repeat; background-size:cover; width:49%; float:right; margin-top: 20px;  height:40%; border-right: 2px;">
+</div>
+Show more
+  </div>
+  <div id="praises" style="  margin-top:30px; height:200px; margin-right: 10%; margin-left: 10%;">
+    <div id="praise1"style=" float:left; width:49%; height:100%; box-shadow: 5px 2px 5px black;">
+     <div id="praiser1" style="position: relative;  width:100%; height:35%">
+       <img src="image/thehindu.jpg" style="position: absolute; width: 50%; height: 100%;">
+       </div>
+     <div id="praisal1" style="position: relative;  width:100%; height:65%">
+      <h2 style="position: absolute; line-height: 40px; padding:10px;">
+        "The most trending and most used website to book hotels and plan holidays"
+      </h2>
+       </div>
+    </div>
+    <div id="praise2"style=" float:right; width:49%; height:100%; box-shadow: 5px 2px 5px black;">
+    <div id="praiser2" style="position: relative;  width:100%; height:35%">
+       <img src="image/TOI.png" style="position: absolute; width: 50%; height: 100%;">
+       </div>
+     <div id="praisal2" style="position: relative;  width:100%; height:65%">
+      <h2 style="position: absolute; line-height: 40px; padding:10px;">
+        "The most recommended website for hotel bookings and holiday trips"
+      </h2>
+       </div>
+    </div>
+  </div>
+  <div id="footer" style="height:400px; margin-top: 20px; ">
+   <div style="width:100%; height:80px; border-top:1px solid black; border-bottom:1px solid black;">
+    <div id="serviceholder" style="margin-left: 10%; margin-right: 10%; height:80px;">
+      <div class="services" style="float:left; width:16.6% ;  margin-top:20px; height:50%; font-size: 20px; padding:10px 0px;  border-right:0.5px solid black;"> Tie up with Us </div>
+      <div class="services" style="float:left; width:16.6% ;  margin-top:20px; height:50%;text-align: center; font-size: 20px; padding:10px 0px;  border-right:0.5px solid black;"> Tourism privilages </div>
+      <div class="services" style="float:left; width:16.6% ;  margin-top:20px; height:50%;text-align: center; font-size: 20px; padding:10px 0px;  border-right:0.5px solid black;"> feedback </div>
+      <div class="services" style="float:left; width:16.6% ;  margin-top:20px; height:50%;text-align: center; font-size: 20px; padding:10px 0px;  border-right:0.5px solid black;"> subscribe </div>
+      <div class="services" style="float:left; width:16.6% ;  margin-top:20px; height:50%;text-align: center; font-size: 20px; padding:10px 0px;  border-right:0.5px solid black;"> booking History </div>
+      <div class="services" style="float:left; width:16.6% ;  margin-top:20px; height:50%; text-align: center; font-size: 20px; padding:10px 0px; "> complaints   </div>
+    </div>
+  </div>
+  <div id="contactshare" style="width:100%; background-color: black; margin-top:20px;">
+    <div class="app" style="width:33%; float:left; height: 200px; padding:20px 20px; ">
+        <p style="font-size: 18px; text-align: center;">Download the App
+</p> 
+<div class="playstore" style="width: 100%; height: 50%;  opacity:1;
+">
+<img src="playstore.png" id="play" style="width: 100%; height: 100%;">
+</div>
+<div class="applestore" style="width: 80%; height: 30%;  opacity:1;
+">
+<img src="applestore.png" id="apple" style="width: 105%;height: 100%; margin-left: 30px;">
+</div>     
+<div style="height:120px; ">
+         </div >
+    </div>
+    <div id="contact" style="width:33%;float: left; height: 200px; margin-left: 0.5%; padding:20px 20px; ">
+         <p style="font-size: 18px; text-align: center;">contact Us</p>
+
+         <div style="height:120px;">
+           <h5 style="text-align: center; text-decoration-color:red; text-decoration:underline;"> Address </h5>
+           <p align="center"> Lovely professional University <br>phagwara <br> punjab <br> 14401</p>
+         </div >
+    </div>
+    <div id="about" style="width:33%; float:right; height: 200px; ;padding:20px 20px; ">
+         <p style="font-size: 18px; text-align: center;">About Us</p>
+         <div style="height:120px; ">
+          <p style="padding:0px 50px; float:left;"><a href="#">privacy policy</a></p> 
+          <p style="padding:0px 50px; float:right"><a href="#">privacy </a></p> 
+          <p style="padding:0px 50px; float:left; text-decoration: none;"><a href="#">support</a></p> 
+          <p style="padding:0px 50px; float:right"><a href="#">feedback </a></p> 
+         </div >
+  </div>
+  </div>
+  <div id="scrolltop" style="position: fixed; bottom:50px; right :30px; width:3%; height: 5%; border-radius: 30%;  background-image: url(up.png); background-size: cover; background-repeat: no-repeat; "> </div>
+  </div>
+
+<script>
+    $(document).ready(function () {
+        $(".recpicsdata1").hide();
+  $(".recpicsdata2").hide();
+  $(".recpicsdata3").hide();
+  $(".recpicsdata4").hide();
+  $(".recpicsdata5").hide();
+  $(".recpicsdata6").hide();
+      setInterval("nextimage()",3000);
+        $('.overlay5').mouseenter(function () {
+          $(".rech5").css({"margin-top":"30px","opacity":"0.8", "text-decoration":"underline","transition":"0.5s"});
+            $('.recpicsdata5').slideDown();
+        });
+        $('.overlay5').mouseleave(function () {
+            $('.recpicsdata5').slideUp(500);
+            $(".rech5").css({"margin-top":"150px","opacity":"1", "text-decoration":"none","transition":"0.5s"});
+        });
+
+                $('.overlay1').mouseenter(function () {
+          $(".rech1").css({"margin-top":"30px","opacity":"0.8", "text-decoration":"underline","transition":"0.5s"});
+            $('.recpicsdata1').slideDown();
+        });
+        $('.overlay1').mouseleave(function () {
+            $('.recpicsdata1').slideUp(500);
+            $(".rech1").css({"margin-top":"150px","opacity":"1", "text-decoration":"none","transition":"0.5s"});
+        });
+                        $('.overlay2').mouseenter(function () {
+          $(".rech2").css({"margin-top":"15px","opacity":"0.8", "text-decoration":"underline","transition":"0.5s"});
+            $('.recpicsdata2').slideDown();
+        });
+        $('.overlay2').mouseleave(function () {
+            $('.recpicsdata2').slideUp(500);
+            $(".rech2").css({"margin-top":"50px","opacity":"1", "text-decoration":"none","transition":"0.5s"});
+        });
+                                $('.overlay3').mouseenter(function () {
+          $(".rech3").css({"margin-top":"15px","opacity":"0.8", "text-decoration":"underline","transition":"0.5s"});
+            $('.recpicsdata3').slideDown();
+        });
+        $('.overlay3').mouseleave(function () {
+            $('.recpicsdata3').slideUp(500);
+            $(".rech3").css({"margin-top":"50px","opacity":"1", "text-decoration":"none","transition":"0.5s"});
+        });
+                                $('.overlay4').mouseenter(function () {
+          $(".rech4").css({"margin-top":"15px","opacity":"0.8", "text-decoration":"underline","transition":"0.5s"});
+            $('.recpicsdata4').slideDown();
+        });
+        $('.overlay4').mouseleave(function () {
+            $('.recpicsdata4').slideUp(500);
+            $(".rech4").css({"margin-top":"50px","opacity":"1", "text-decoration":"none","transition":"0.5s"});
+        });
+                                $('.overlay6').mouseenter(function () {
+          $(".rech6").css({"margin-top":"15px","opacity":"0.8", "text-decoration":"underline","transition":"0.5s"});
+            $('.recpicsdata6').slideDown();
+        });
+        $('.overlay6').mouseleave(function () {
+            $('.recpicsdata6').slideUp(500);
+            $(".rech6").css({"margin-top":"50px","opacity":"1", "text-decoration":"none","transition":"0.5s"});
+        });
+    });
+// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+
+  if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+    document.getElementById("navbar").style.padding = "30px 10px";
+    document.getElementById("logo").style.fontSize = "25px";
+  } else {
+    document.getElementById("navbar").style.padding = "70px 10px";
+    document.getElementById("logo").style.fontSize = "35px";
+  }
+}
+$(function() { $("#scrolltop").on('click', function() { $("HTML, BODY").animate({ scrollTop: 0 }, 500); }); });
+  var n=6;
+  var currentslide;
+  var imagesrc;
+  currentslide=1;
+function nextimage()
+  { 
+    if(currentslide==7)
+    {
+      currentslide=0;
+    }
+        document.getElementById("backgroundimage").setAttribute("src","image/image"+(currentslide++)+".jpeg");
+        if(currentslide==4)
+        {
+          currentslide=1;
+        }
+  }
+      function previmage()
+  {
+        if(currentslide==1)
+        {
+          currentslide=5;
+        }
+        document.getElementById("backgroundimage").setAttribute("src","image/image"+(currentslide--)+".jpeg");
+
+ setTimeInterval(previmage(),3000);
+}
+
+
+
+</script>
+
+</body>
+</html>

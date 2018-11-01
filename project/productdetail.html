@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="bootstap.min.js"></script>
+<script src="jquery.js"></script>
+<style src="bootstap.min.css"></style>
+<style>
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  height:1000px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar {
+
+  background-color: #f1f1f1;
+  padding: 70px 10px;
+  transition: 0.2s;
+  position: fixed;
+  width: 100%;
+
+  top: 0;
+  
+}
+
+#navbar a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 20px;
+  border-radius: 4px;
+
+}
+
+#navbar #logo {
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+#navbar-right {
+  float: right;
+}
+
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 80px 10px !important;
+  }
+  #navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  #navbar-right {
+    float: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<div id="navbar" style="z-index: 5;">
+  <a href="#default" id="logo">Explorer</a>
+  <div id="navbar-right">
+    <a href="home.html">Home</a>
+    <a href="ontactus.html">Contact Us</a>
+    <a href="login.html">Login</a>
+  </div>
+</div>
+<div id="bookingcontainer" style="margin-right: 10%;margin-left: 10%; margin-top: 220px; position: relative; height:800px; background-color: #ddd; border-radius: 20px">
+   <div id="roomcontainer" style="width:60%; float:left; border-radius: 20px; height:70%; ">
+    <div id="mainpic" style="width:100%;height:70%; border-radius: 20px; background-image: url(image/1.jpg); background-repeat: no-repeat;background-size: cover; value="image/1.jpg" ">
+   </div>
+    <div id="morepics" style="width:100%;height:30%; border-radius: 20px; background-color:green;">
+      <div id="morepics1" style="width:25%; height: 100%; float:left; background-repeat: no-repeat;background-size: cover; background-image: url(image/2.jpg)" onclick="loadimage1()" value="image/2.jpg" >; </div>
+           <div id="morepics2" style="width:25%; height: 100%; float:left; background-repeat: no-repeat;background-size: cover; background-image: url(image/4.jpg)" value="image/4.jpg" > </div>
+                <div id="morepics3" style="width:25%; height: 100%; float:left; background-repeat: no-repeat;background-size: cover; background-image: url(image/3.jpg)" value="image/3.jpg" > </div>
+                     <div id="morepics4" style="width:25%; height: 100%; float:left; background-repeat: no-repeat;background-size: cover; background-image: url(image/5.jpg) ; " value="image/5.jpg"> </div>
+   </div>
+ </div>
+   <div id="bookingsection" style="float:left; width:40%; height:70%">
+    <div style="width:100%; height:30px; " id="bookinghead"> <h2 align="center" style="border-bottom: 1px solid black;"> Book your stay </h2></div>
+    <div id="bookingform" style=" width:100%; height: 94%; border-bottom-right-radius: 20px;">
+  <div id="checkindiv" style="width:60% ;height:50px; text-align: center; margin-left:75px; margin-top:50px">
+       Checkin
+  <input  class="searchelements" style="width:100%; height:75%;float: left;border-radius:5px;"; type="text" onfocus ="(this.type='date')" onblur="(this.type='text')" id="checkin">
+  </div>
+  <div id="checkoutdiv" style="width:60% ;height:50px; text-align: center; margin-left:75px; margin-top:10px">
+       Checkout
+  <input  class="searchelements" style="width:100%; height:75%;float: left;border-radius:5px;"; type="text" onfocus ="(this.type='date')" onblur="(this.type='text')" id="checkout">
+  </div>
+ <div id="pricediv" style="width:40% ; height:50px; margin-left: 60%; align: center; margin-top:50px">
+   <div style="width:40%; float:left;font-size: 20px; text-align: center; height:100%;  background-color:black; color: white;">
+         <p ><b>Price:</b></p>
+   </div>
+   <div class="priceinput" style="width:60%; float:left; text-align: left; padding-left: 10px; font-size: 20px;  height:100%;  background-color:#fff;">
+    <p class="price"  ><b> 4498/-</b></p>
+   </div>
+   </div>
+   <div id="booknowdiv" style="width:40% ; height:50px; float: right; margin-left:100px; align: center;">
+       <div style="width:100%; float:left;font-size: 20px; text-align: center; height:100%;  background-color:orange;">
+         <p style=""><b>Book now</b></p>
+       </div>
+   </div>
+<div id="aminities" style="border-top: 1px solid black;position: relative; margin-top: 80px; width: 100%; height:33%; border-bottom: 2px solid black;">
+  <h3 style="text-align: left; background-color:#abc; width: 30%; height: 30px; font-size: 24px;"> Aminities</h3>
+  <div class="rating" style="float: right;text-align: center; width: 30%; position: relative; height: 90px; background-color: red; border-bottom-left-radius:30px; border-top-left-radius:30px; border-left:1px solid black; ">
+    <h1 style=" position: absolute; font-size: 40px; padding-left:30px">4.2</h1>
+    <h3 style="position: absolute; font-size: 20px;  padding-left:85px; padding-top: 35px">/5</h3>
+  </div>
+  <h2 style="position: absolute; right: 0px; top:20px;"> User rating</h2>
+  <div id="aminityholder" style="width:50%; height:110px; border-bottom-left-radius:10px;border-bottom-right-radius:10px">
+    <div class="aminity" style="float:left; padding:10px 20px">  
+    <img src="service.png" style="padding-left: 20px;padding-bottom:4px;">
+    <img src="image/kingbed.png" style="padding-left: 20px;padding-bottom:4px;">
+    <img src="image/wind.png" style="padding-left: 20px;padding-bottom:4px;">
+    <br>
+        <img src="image/briefcase.png" style="padding-left: 20px;padding-bottom:4px;">
+    <img src="image/bathtub.png" style="padding-left: 20px;padding-bottom:4px;">
+ 
+  </div>
+</div>
+    </div>
+   </div>
+ </div>
+   <div class="reviews" style="width: 100%; height: 30%; position: absolute; top:70%; ">
+    <div class="review1" style="  width: 33%; height: 100%; float: left; border-right: 1px solid black; border-bottom-left-radius: 10px">
+      <div style=" width: 100%; height: 30%; text-align: left;">
+      <h3 style="position: absolute; padding: 20px 20px; background-color: #abc"> ankit sharma </h3>
+    </div>
+    <div style=" height: 70%; position: relative; width: 100%;">
+      <blockquote  style="position: absolute; font-size: 22px;"> "A very great experiance through the website and the wuality of customer service is good"</blockquote>
+       </div>
+    </div>
+    <div class="review2" style="  width: 33%; height: 100%; float: left; border-right: 1px solid black;">
+      <div style=" width: 100%; height: 30%; text-align: left;">
+      <h3 style="position: absolute; padding: 20px 20px; background-color: #abc"> sandeep </h3>
+    </div>
+    <div style=" height: 70%; position: relative; width: 100%;">
+      <blockquote  style="position: absolute; font-size: 22px;"> "A very great quality of travel itenary is made my them which worth my money and I enjoyed the trip"</blockquote>
+       </div>
+    </div>
+    <div class="review2" style="  width: 33%; height: 100%; float: left;">
+      <div style=" width: 100%; height: 30%; text-align: left;">
+      <h3 style="position: absolute; padding: 20px 20px; background-color: #abc"> ankit sharma </h3>
+    </div>
+    <div style=" height: 70%; position: relative; width: 100%;">
+      <blockquote  style="position: absolute; font-size: 22px;"> "A very great experiance through the website and the wuality of customer service is good"</blockquote>
+       </div>
+    </div>
+</div>
+</div>
+<script>
+// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("navbar").style.padding = "30px 10px";
+    document.getElementById("logo").style.fontSize = "25px";
+  } else {
+    document.getElementById("navbar").style.padding = "70px 10px";
+    document.getElementById("logo").style.fontSize = "35px";
+  }
+}
+
+
+</script>
+
+</body>
+</html>
